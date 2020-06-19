@@ -1,0 +1,22 @@
+@media screen and (max-width: 768px) {
+  .profile-pic {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .info-pic-container {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 2px;
+  }
+  .events {
+    display: flex;
+    flex-direction: column;
+  }
+  .event-flyer {
+    max-width: 85vw;
+    max-height: 250px;
+    margin: 0 auto;
+  }
+}
