@@ -91,6 +91,7 @@ export const ScrubberContainer = styled.div`
   flex: 1 0 auto;
   align-items: center;
   position: relative;
+  width: 65%;
   height: 109%;
 
   &::before {

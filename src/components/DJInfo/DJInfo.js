@@ -35,10 +35,12 @@ export default function DJInfo ({ location }) {
       </div>
       <div className="events" style={{ textAlign: 'center' }}>
         <p style={{ color: 'white', fontSize: '1.5em', textAlign: 'center' }}>PREVIOUS EVENTS</p>
-        {dj.PreviousEventFlyers ? dj.PreviousEventFlyers.split(' ').map(event => {
+        <div className="flyers">
+          {dj.PreviousEventFlyers ? dj.PreviousEventFlyers.split(' ').map(event => {
 
-          return <Link to={{ pathname: `/eventgallery/${event.match(/([^/]+)(?=\.\w+$)/)[0]}`, state: `${event.match(/([^/]+)(?=\.\w+$)/)[0]}` }}><img className="event-flyer" src={event} style={{ width: '400px', height: '250px', margin: '20px', objectFit: 'fill' }} alt="" /></Link>
-        }) : <p style={{ textAlign: 'center', padding: '40px 0' }}>No events available</p>}
+            return <Link to={{ pathname: `/eventgallery/${event.match(/([^/]+)(?=\.\w+$)/)[0]}`, state: `${event.match(/([^/]+)(?=\.\w+$)/)[0]}` }}><img className="event-flyer" src={event} style={{ width: '400px', height: '250px', margin: '20px', objectFit: 'fill', flexWrap: 'wrap' }} alt="" /></Link>
+          }) : <p style={{ textAlign: 'center', padding: '40px 0' }}>No events available</p>}
+        </div>
       </div>
     </div >
 

@@ -16,46 +16,50 @@ export default function RecordLabelDJ ({ client }) {
   const [products, setProducts] = useState([]);
   // const [shop, setShop] = useState({})
 
-  const { dj } = useParams();
-  console.log(dj)
+  let { dj } = useParams();
+  if (dj.match(' ')) {
+    let res = [];
+    let arr = dj.split(' ')
+    arr.map(el => res.push(el[0].toUpperCase() + el.substring(1)))
+    dj = res.join(' ');
+  } else {
+    dj = dj.split(' ')[0][0].toUpperCase() + dj.split(' ')[1][0].substring(1);
+
+  }
 
   useEffect(() => {
 
-
     storage
       .ref('DJs/')
-      .child(`${dj[0].toUpperCase() + dj.substring(1)}/Music/boxer-previews`)
+      .child(`${dj[0].toUpperCase() + dj.substring(1)}/Music/Previews`)
       .list()
-      // .getDownloadURL()
-
       .then(data => {
-        // console.log(data.items);
-        let urlArr = [];
+        let trackDataArr = [];
         for (let i = 0; i < data.items.length; i++) {
-          let url = data.items[i].getDownloadURL()
-            .then(url => {
-              urlArr.push(url.toString())
+          const metaObj = {}
+          data.items[i].getDownloadURL()
+            .then((url) => {
+              metaObj.url = url
+            });
+          data.items[i].getMetadata()
+            .then((metaData) => {
+              metaObj.meta = metaData
+              trackDataArr.push(metaObj)
             })
             .then(() => {
-              setTrackPreviews(urlArr)
-            })
+              setTimeout(() => {
+                setTrackPreviews(trackDataArr)
+              }, 500)
+            });
         }
-        console.log(trackPreviews)
-        // console.log(data.prefixes);
-
-        // data.prefixes.forEach(element => {
-        //   console.log(element.getDownloadURL())
-        // })
       })
       .catch(err => console.log('errrr', err));
 
-
-
-    fetch(`http://localhost:8080/track-previews//${dj}`)
-      .then(data => data.json())
-      .then(tracks => {
-        setTrackPreviews(tracks.resources)
-      })
+    // fetch(`http://localhost:8080/track-previews//${dj}`)
+    //   .then(data => data.json())
+    //   .then(tracks => {
+    //     setTrackPreviews(tracks.resources)
+    //   })
 
     client.checkout.create().then((res) => {
       setCheckout(res)
@@ -130,7 +134,7 @@ export default function RecordLabelDJ ({ client }) {
               fontSize: '35px',
               color: 'white'
             }}>Track Previews</p>
-          {trackPreviews/* .slice(0, 1) */.sort((a, b) => a.url < b.url ? -1 : 1).map(track => <AudioPlayer track={track} audioLink={track} />)}
+          {trackPreviews.length && trackPreviews.sort((a, b) => a.url < b.url ? -1 : 1).map(track => <AudioPlayer key={track.meta.md5Hash} track={track.meta && track.meta.name} audioLink={track.url} />)}
         </div>
         <div className="App" style={{ display: 'inline-block', verticalAlign: 'center', minWidth: '300px' }}>
 

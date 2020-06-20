@@ -15,9 +15,6 @@ export default function Eventgallery ({ location }) {
     window.scrollTo(0, 0)
   }, [location.state])
 
-  console.log(images);
-
-
   const styles = {
     container: {
       display: 'flex',
@@ -37,7 +34,7 @@ export default function Eventgallery ({ location }) {
   return (
     <div style={{ display: 'flex' }}>
       <div style={styles.container}>
-        {images && images.map(image => <img src={image.url} alt='event' key={image.asset_id} style={styles.img} />)}
+        {images && images/* .slice(0, 1) */.map(image => <img src={image.url} alt='event' key={image.asset_id} style={styles.img} />)}
       </div>
     </div>
   )

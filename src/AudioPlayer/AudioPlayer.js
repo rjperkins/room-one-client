@@ -39,11 +39,6 @@ class AudioPlayerContainer extends React.Component {
         this.props.fetchPreviews()
       }
     }
-    // return new Promise(this.state.audio[method]())
-    //   .then(data => data)
-    //   .catch(rej => {
-    //   });
-    // promise
   };
 
   updateProgress = () => {
@@ -72,8 +67,6 @@ class AudioPlayerContainer extends React.Component {
     let seconds = this.pad(time - hours * 3600 - minutes * 60, 2);
     if (hours > 0) {
       return `${hours}:${minutes}:${seconds}`;
-      /* } else if (30 - seconds < 0) {
-        return `00:00`; */
     } else {
       return `${minutes}:${this.pad(seconds, 2)}`;
     }
@@ -102,7 +95,7 @@ class AudioPlayerContainer extends React.Component {
         className="Track-Previews__track-title"
         style={{ color: 'white', fontSize: '14px' }}>
         {/* <div style={{ width: 'max-content' }}> */}
-        {this.props.track.public_id.match(/[^/]+$/)[0].replace(/_/gi, ' ')}
+        {this.props.track.split('-')[0]}
         {/* </div>  */}
         <Container>
           <PlayPauseButton onClick={() => this.togglePlay()}>
