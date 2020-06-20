@@ -32,8 +32,6 @@ const apiService = {
       body: JSON.stringify(idObj)
     })
       .then(res => res.json())
-    console.log(ids);
-
     return ids;
   }
 };
