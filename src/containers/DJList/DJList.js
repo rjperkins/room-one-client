@@ -26,9 +26,6 @@ export default function DJList () {
 
   }, [])
 
-  console.log(djList);
-
-
   const handleChange = (event) => {
     event.preventDefault();
     setUserInput(event.target.value);
