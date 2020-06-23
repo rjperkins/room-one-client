@@ -1,0 +1,53 @@
+.navbar {
+  height: 50px;
+}
+
+.navbar-brand {
+  background: url('../../assets/Room1logo.jpeg') no-repeat center center;
+  background-size: cover;
+  width: 60px
+}
+
+.navbar-stretch {
+  width: 60px
+}
+
+.navbar-burger {
+  margin-left: 60px;
+}
+
+#nav-toggle-state {
+  display: none;
+}
+
+#nav-toggle-state:checked~.navbar-menu {
+  display: block;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .navbar>.container {
+    align-items: stretch;
+    display: flex;
+    min-height: 3.25rem;
+    width: 100%;
+  }
+  .navbar-burger, .navbar-dropdown {
+    display: none;
+  }
+  .navbar-menu {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+    justify-content: flex-start;
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+  .navbar, .navbar-end, .navbar-menu, .navbar-start {
+    display: flex;
+    align-items: stretch;
+  }
+  .navbar-item {
+    display: flex;
+    align-items: center;
+  }
+}

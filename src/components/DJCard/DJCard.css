@@ -1,0 +1,43 @@
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    font-family: AG, sans-serif;
+    font-size: 15px;
+    line-height: 23px;
+    color: #4c4c4c;
+    margin: 20px 15px;
+    height: 290px;
+  }
+
+  .dj-img {
+    width: 290px;
+    filter: grayscale(100%);
+    /* object-fit: contain */
+  }
+
+  .dj:hover .dj-name {
+    color: black;
+    background-color: rgb(246, 237, 72);
+    cursor: pointer;
+  }
+
+  .dj-name:hover .dj-name {
+    color: black;
+    background-color: rgb(246, 237, 72);
+    cursor: pointer;
+  }
+
+  .dj-img:hover {
+    filter: grayscale(0%);
+  }
+
+  .dj-name {
+    font-size: 20px;
+    font-weight: 600;
+    background: black;
+    text-decoration: none;
+    display: block;
+    line-height: 40px;
+    text-align: center;
+    color: rgb(246, 237, 72);
+  }

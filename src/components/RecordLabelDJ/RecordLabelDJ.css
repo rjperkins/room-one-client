@@ -1,0 +1,19 @@
+  @media screen and (min-width: 300px) and (max-width: 768px) {
+    .Record-Label__container {
+      display: flex;
+      flex-direction: column;
+    }
+    .player {
+      padding: 30px;
+    }
+    .Track-Previews__title {
+      text-align: center;
+    }
+    .Track-Previews__track-title {
+      text-align: center;
+    }
+    .Audio-Player__container {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
