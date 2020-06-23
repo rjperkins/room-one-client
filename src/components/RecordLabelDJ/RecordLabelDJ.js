@@ -29,6 +29,8 @@ export default function RecordLabelDJ ({ client }) {
 
   useEffect(() => {
 
+    window.scrollTo(0, 0)
+
     storage
       .ref('DJs/')
       .child(`${dj[0].toUpperCase() + dj.substring(1)}/Music/Previews`)

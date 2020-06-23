@@ -5,7 +5,7 @@ import './Home.css'
 
 export default function Home () {
   return (
-    <div className="all-home" style={{ minHeight: '100vh', paddingTop: '60px' }}>
+    <div className="all-home" style={{ minHeight: '100vh' }}>
       <div className="cover" style={{
         backgroundImage: `url(${room1cover})`, backgroundSize: '100%', backgroundRepeat: 'no-repeat', width: 'auto', display: 'flex', justifyContent: 'center', fontFamily: 'Work Sans'
       }}>

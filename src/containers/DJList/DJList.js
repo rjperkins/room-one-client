@@ -13,6 +13,9 @@ export default function DJList () {
 
   let i = 0;
   useEffect(() => {
+
+    window.scrollTo(0, 0)
+
     const abortController = new AbortController();
 
     apiService.getDJs()
@@ -68,7 +71,7 @@ export default function DJList () {
           )) :
           <CircleLoader
             css="margin-top:30vh;"
-            size={200}
+            size={100}
             color={"yellow"}
           />
         }

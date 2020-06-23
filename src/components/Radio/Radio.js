@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { TwitchChat } from 'react-twitch-embed';
 import ReactPlayer from "react-player"
 import './Radio.css'
@@ -6,6 +6,10 @@ import './Radio.css'
 export default function Radio ({ channel }) {
 
   const [loaded, setLoaded] = useState(false)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
 
   const StreamChat = () => {
     return (

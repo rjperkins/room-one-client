@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import './DJInfo.css'
 
 export default function DJInfo ({ location }) {
   const { dj } = location.state;
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
 
   return (
     <div style={{ minHeight: '100vh' }} >
