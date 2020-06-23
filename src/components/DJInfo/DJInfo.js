@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import './DJInfo.css'
+import room1Logo from '../../assets/Room1logo.jpeg';
 
 export default function DJInfo ({ location }) {
   const { dj } = location.state;
@@ -11,7 +12,7 @@ export default function DJInfo ({ location }) {
   }, []);
 
   return (
-    <div style={{ minHeight: '100vh' }} >
+    <div style={{ minHeight: '100vh', padding: '1px' }} >
       <div className="info-pic-container" style={{ display: 'flex', paddingTop: '60px' }}>
         <div style={{ padding: '30px' }}>
           <p style={{ color: 'white', fontSize: '2em' }}>{dj.DJ}</p>
@@ -26,7 +27,7 @@ export default function DJInfo ({ location }) {
             )}
           </div>
         </div>
-        <img className="profile-pic" src={dj.ProfilePicture} style={{ width: 'auto', height: '400px', margin: '40px 20px' }} alt="" />
+        <img className="profile-pic" src={dj.ProfilePicture ? dj.ProfilePicture : room1Logo} alt="" />
       </div>
       <div style={{ margin: "20px 0 " }}>
         {dj.Room1GuestMixLink.split(' ').map(mix =>

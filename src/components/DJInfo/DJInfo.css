@@ -11,15 +11,23 @@
   object-fit: fill;
 }
 
-@media screen and (max-width: 768px) {
+.profile-pic {
+  display: block;
+  min-width: 320px;
+  max-width: 320px;
+  max-height: 320px;
+  padding: 20px 20px;
+}
+
+/* @media screen and (max-width: 768px) {
   .profile-pic {
     display: none;
   }
-}
+} */
 
-@media screen and (max-width: 580px) {
+@media screen and (min-width: 320px) and (max-width: 930px) {
   .info-pic-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     flex-wrap: nowrap;
     padding: 2px;
   }
@@ -31,5 +39,12 @@
     max-width: 85vw;
     max-height: 250px;
     margin: 0 auto;
+  }
+  .profile-pic {
+    display: block;
+    width: 80%;
+    max-width: 50%;
+    padding: 30px 0px
+    /* height: auto; */
   }
 }
