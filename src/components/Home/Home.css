@@ -14,9 +14,9 @@
   @media screen and (min-width: 768px) {
     .cover {
       /* padding-top: 60px; */
-      background-image: url('../../assets/room1cover.jpg');
-    }
-    .cover-image-home {
       display: none;
+      /* background-image: url('../../assets/room1cover.jpg'); */
     }
+    /* .cover-image-home {
+    } */
   }
