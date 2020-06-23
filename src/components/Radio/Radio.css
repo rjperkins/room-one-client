@@ -32,7 +32,7 @@
     .radio-container {
       display: none;
       flex-direction: column;
-      padding: 0;
+      padding: 60px 0;
     }
     .chat-embed-boder {
       width: 100vw;
@@ -48,10 +48,5 @@
     }
     .chat-button {
       display: none;
-    }
-    .player {
-      padding: 30px 0 10px;
-      align-self: center;
-      width: 100%;
     }
   }

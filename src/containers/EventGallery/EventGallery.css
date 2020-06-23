@@ -1,0 +1,12 @@
+.bts-container {
+  padding-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.bts {
+  height: 220px;
+  margin: 20px;
+}
