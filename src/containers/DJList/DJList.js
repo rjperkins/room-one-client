@@ -42,7 +42,7 @@ export default function DJList () {
 
   return (
     <div style={{ minHeight: '100vh', padding: "1px 3em 3em" }}>
-      {djList.length ? <form className="form" style={{ marginRight: '1em', textAlign: 'right' }} onSubmit={handleSubmit}>
+      {djList.length ? <form className="form" style={{ textAlign: 'center' }} onSubmit={handleSubmit}>
         <label>
           <input className="search-input" type="text" placeholder="Search Artists" value={userInput} onChange={handleChange} name="review" />
         </label>

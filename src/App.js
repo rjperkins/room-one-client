@@ -42,7 +42,6 @@ export default function App () {
           <Route path='/djs' component={DJList} />
           <Route path='/eventgallery/:event' component={Eventgallery} />
           <Route path='/shop' render={() => <Shop client={client} />} />
-          {/* <Route path='/cart' component={Cart} /> */}
           <Route exact path='/record-label' component={RecordLabel} />
           <Route path='/record-label/:dj' render={() => <RecordLabelDJ client={client} />} />
           <Route path='/dj/:name' component={DJInfo} />
