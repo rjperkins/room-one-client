@@ -17,14 +17,16 @@ export default function RecordLabelDJ ({ client }) {
   // const [shop, setShop] = useState({})
 
   let { dj } = useParams();
+
   if (dj.includes(' ')) {
     let res = [];
     let arr = dj.split(' ')
     arr.map(el => res.push(el[0].toUpperCase() + el.substring(1)))
     dj = res.join(' ');
+  } else if (dj === 'nudivision') {
+    dj = 'NuDivision'
   } else {
     dj = dj[0].toUpperCase() + dj.substring(1);
-
   }
 
   useEffect(() => {

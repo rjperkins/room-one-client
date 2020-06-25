@@ -1,23 +1,23 @@
 import React, { useState, useEffect } from 'react'
-import { TwitchChat } from 'react-twitch-embed';
+// import { TwitchChat } from 'react-twitch-embed';
 import ReactPlayer from "react-player"
 import './Radio.css'
 
 export default function Radio ({ channel }) {
 
-  const [loaded, setLoaded] = useState(false)
+  const [/* loaded */, setLoaded] = useState(false)
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, []);
 
-  const StreamChat = () => {
-    return (
-      <div className="chat">
-        <TwitchChat className="chat" channel={channel} theme="dark" height="100%" parent={['room-one-client.herokuapp.com/radio/:name']} />
-      </div>
-    );
-  }
+  // const StreamChat = () => {
+  //   return (
+  //     <div className="chat">
+  //       <TwitchChat className="chat" channel={channel} theme="dark" height="100%" parent={['room-one-client.herokuapp.com/radio/:name']} />
+  //     </div>
+  //   );
+  // }
 
   function readyHandler () {
     setLoaded(true);

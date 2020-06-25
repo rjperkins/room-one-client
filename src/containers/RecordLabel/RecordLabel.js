@@ -46,7 +46,7 @@ export default function DJList () {
       <div style={{ display: "flex", flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', marginTop: '30px' }}>
         {djList.length ? filteredDjList.length ? filteredDjList.map(dj => (
           <div key={i++}>
-            <Link to={{ pathname: `/record-label/${dj.DJ.toLowerCase()}`, state: { dj } }} >
+            <Link to={{ pathname: `/record-label/${dj.DJ.toLowerCase()}` }} >
               <div >
                 <DJCard dj={dj} />
               </div>
