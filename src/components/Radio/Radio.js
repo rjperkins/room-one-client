@@ -36,6 +36,7 @@ export default function Radio ({ channel }) {
           config={{
             twitch: {
               options: {
+                parent: ['http://www.room1officia.com'],
                 channel,
                 theme: 'dark',
               }
