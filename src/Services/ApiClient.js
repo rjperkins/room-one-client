@@ -1,5 +1,5 @@
-let BASE_URL = 'https://www.googleapis.com/drive/v3/files?key=AIzaSyBr7Ijb4LPA2KsP5VQZvLQxebqSyZwOwBk&q='
-const folderID = '1qnFuCMb8EpMEhvJ9uKuRVfJe6pT9H3pD';
+let BASE_URL = `https://www.googleapis.com/drive/v3/files?key=${process.env.REACT_GOOGLE_FIREBASE_API_KEY}=`
+const folderID = `${process.env.REACT_GOOGLE_FIREBASE_FOLDER_ID}`;
 
 const fetchRequest = (url) => {
   return fetch(`${url}`)
