@@ -67,13 +67,17 @@ export default function RecordLabelDJ ({ client }) {
 
     client.checkout.create().then((res) => {
       setCheckout(res)
-    });
+    })
+      .catch(err => console.log(err));
+    ;
 
     client.product.fetchQuery({
       query: `tag:${dj}`
     }).then((res) => {
       setProducts(res)
-    });
+    })
+      .catch(err => console.log(err));
+    ;
 
     // client.shop.fetchInfo().then((res) => {
     //   setShop(res)
@@ -142,11 +146,12 @@ export default function RecordLabelDJ ({ client }) {
         </div>
         <div className="App" style={{ display: 'inline-block', verticalAlign: 'center', minWidth: '300px' }}>
 
-          <Products
-            products={products}
-            client={client}
-            addVariantToCart={addVariantToCart}
-          />
+          {products.length ?
+            <Products
+              products={products}
+              client={client}
+              addVariantToCart={addVariantToCart}
+            /> : null}
           <Cart
             checkout={checkout}
             isCartOpen={isCartOpen}
@@ -159,6 +164,7 @@ export default function RecordLabelDJ ({ client }) {
               <button className="App__view-cart" onClick={() => setIsCartOpen(true)}>View Cart</button>
             </div>
           }
+          {!products.length && <div style={{ paddingTop: '5rem', justifyContent: 'center', color: 'white' }}><br /><br /><br /><br />Shop currently under maintenance<br /><br />Apologies for the inconvenience</div>}
         </div>
       </div>
     </div >
