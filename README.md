@@ -1,2 +1,2 @@
-[### Room 1###](www.room1official.com)
+[Room 1](www.room1official.com)
 
