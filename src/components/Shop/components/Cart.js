@@ -34,7 +34,7 @@ export default function Cart (props) {
         {line_items}
       </ul>
       <div style={{ padding: '20px', fontSize: '12px' }}>
-        All purchases will recieve an e-mail containing a download link of soon after purchase
+        All purchases will recieve an e-mail containing a download link soon after purchase
       </div>
       <footer className="Cart__footer">
         <div className="Cart-info clearfix">

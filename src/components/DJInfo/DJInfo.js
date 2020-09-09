@@ -35,8 +35,9 @@ export default function DJInfo ({ location }) {
         </div>
       </div>
       <div style={{ margin: "20px 0 " }}>
-        {dj && dj.Room1GuestMixLink.split(' ').map(mix =>
+        {dj && dj.Room1GuestMixLink.split(' ').map((mix, index) =>
           <ReactPlayer width="100%" height="20vh"
+            key={`key-${index}`}
             controls={true}
             style={{ alignSelf: "center" }}
             url={mix}

@@ -7,7 +7,6 @@ const apiService = {
   },
 
   cloudinaryGetByTag: async () => {
-    console.log(process.env.NODE_ENV);
     const djs = await fetch(process.env.NODE_ENV === 'production' ? 'https://room-one-server.herokuapp.com/galleryUrls' : 'http://localhost:8080/galleryUrls')
       .then(res => res.json())
 
